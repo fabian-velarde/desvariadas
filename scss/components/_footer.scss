@@ -1,0 +1,48 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.page-wrap {
+    min-height: 100%;
+    margin-bottom: -60px;
+}
+
+.page-wrap:after {
+    content: "";
+    display: block;
+}
+
+.footer, .page-wrap:after {
+    height: 60px;
+}
+
+.footer {
+    @include background;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    a {
+        color: gold;
+        text-decoration: none;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        position: fixed;
+        margin-bottom: -20px;
+        padding: 15px;
+        flex-direction: column;
+        a {
+            margin-bottom: 0px;
+            font-size: 1rem;
+            text-align: center;
+        }
+    }
+}
