@@ -55,11 +55,12 @@ body{
 }
 
 .logo {
+    color: $color-gold;
     width: 100%;
 }
 
 .search input {
-    background-color: $color-back;
+    background-color: $color-gold;
     width: 170px;
     padding: 10px;
     border-radius: 20px;
@@ -139,7 +140,7 @@ nav {
                 width: 200px;
                 display: flex;
                 flex-direction: column;
-                background: #f9f9f9;
+                @include background;
                 box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
                 position: absolute;
                 margin-top: 90px;
@@ -192,90 +193,5 @@ nav > ul > li > ul > li > a {
         padding-left: 30px;
         font-size: 14px;
         box-shadow: 0, 0, 0;
-    }
-}
-
-.icon__menu{
-    font-size: 26px;
-    cursor: pointer;
-    width: 26px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-#label__check{
-    width: 26px;
-    height: 100%;
-    display: none;
-}
-
-#check__menu{
-    display: none;
-}
-
-@media screen and (max-width: 770px){
-    .search input {
-        @include center;
-        background-color: $color-back;
-        width: 130px;
-        padding: 5px;
-        border-radius: 10px;
-        visibility: visible;
-    }
-    .header__superior {
-        padding:10px
-    }
-    .logo img {
-        width: 200px;
-    }
-    nav > ul{
-        flex-direction: column;
-        background-color: blue;
-        position: fixed;
-        left: 0;
-        top: 158px;
-        width: 100%;
-        height: 300px;
-        transition: all 300ms ease;
-        z-index: 100;
-        opacity: 0;
-        visibility: hidden;
-    }
-    nav > ul{
-    flex-direction: column;
-    background-color: brown;
-    position: fixed;
-    left: 0;
-    top: 158px;
-    width: 100px;
-    height: 300px;
-    transition: all 300ms ease;
-    z-index: 100;
-    opacity: 0;
-    visibility: hidden;
-    }
-    nav > ul > li > a:hover{
-        transform: scale(1);
-    }
-    nav ul li  ul {
-        left: 90px;
-    }
-    nav > ul > li:hover  ul {
-        top: 50px;
-    }
-    #selected {
-        transform: scale(1);
-    }
-    #label__check{
-        display: block;
-    }
-    .icon__menu{
-        display: flex;
-    }
-    #check__menu:checked ~ nav > ul{
-        height: 300px;
-        visibility: visible;
-        opacity: 1;
     }
 }
