@@ -1,18 +1,9 @@
 * {
   margin: 0;
-  padding: 0;
+  padding-right: 0;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
   text-decoration: none;
   list-style: none;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
-  text-decoration: none;
 }
 
 header {
@@ -20,6 +11,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 10;
 }
 
 .header_superior {
@@ -32,12 +24,6 @@ header {
   background-color: rgba(0, 0, 0, 0.726);
   padding: 20px;
   z-index: 10;
-}
-
-body {
-  background-image: url(/img/ropa.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .logo {
@@ -65,7 +51,7 @@ a {
   align-content: center;
   width: 100%;
   height: 70%;
-  background-image: url(/img/fucsia.jpg);
+  background-color: rgba(0, 0, 0, 0.534);
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
   padding: 0px 20px;
 }
@@ -80,7 +66,7 @@ a {
 }
 
 nav {
-  background-image: url(/img/fucsia.jpg);
+  background-color: rgba(0, 0, 0, 0.534);
   height: 100%;
 }
 
@@ -95,7 +81,7 @@ nav > ul li {
 }
 
 nav > ul > li > a {
-  background-image: url(/img/fucsia.jpg);
+  background-color: rgba(0, 0, 0, 0.534);
   width: 100%;
   height: 100%;
   display: flex;
@@ -108,7 +94,7 @@ nav > ul > li > a {
 }
 nav > ul > li > a:hover {
   transform: scale(1.1);
-  background-image: url(/img/fucsia.jpg);
+  background-color: rgba(0, 0, 0, 0.534);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
@@ -118,7 +104,7 @@ nav ul li ul {
   width: 200px;
   display: flex;
   flex-direction: column;
-  background-image: url(/img/fucsia.jpg);
+  background-color: rgba(0, 0, 0, 0.534);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
   position: absolute;
   margin-top: 90px;
@@ -169,6 +155,14 @@ nav > ul > li > ul > li > a:hover {
   box-shadow: 0, 0, 0;
 }
 
+* {
+  margin: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
 .icon__menu {
   font-size: 26px;
   cursor: pointer;
@@ -176,6 +170,7 @@ nav > ul > li > ul > li > a:hover {
   height: 100%;
   display: flex;
   align-items: center;
+  display: none;
 }
 
 #label__check {
@@ -188,783 +183,254 @@ nav > ul > li > ul > li > a:hover {
   display: none;
 }
 
-@media screen and (max-width: 770px) {
-  .search input {
-    display: none;
-  }
-  .header__superior {
-    padding: 10px;
-  }
-  .logo img {
-    width: 200px;
-  }
-  nav > ul {
-    flex-direction: column;
-    background-color: blue;
-    position: fixed;
-    left: 0;
-    top: 158px;
-    width: 100%;
-    height: 300px;
-    transition: all 300ms ease;
-    z-index: 100;
-    opacity: 0;
-    visibility: hidden;
-  }
-  nav > ul {
-    flex-direction: column;
-    background-color: brown;
-    position: fixed;
-    left: 0;
-    top: 158px;
-    width: 100px;
-    height: 300px;
-    transition: all 300ms ease;
-    z-index: 100;
-    opacity: 0;
-    visibility: hidden;
-  }
-  nav > ul > li > a:hover {
-    transform: scale(1);
-  }
-  nav ul li ul {
-    left: 90px;
-  }
-  nav > ul > li:hover ul {
-    top: 50px;
-  }
-  #selected {
-    transform: scale(1);
-  }
-  #label__check {
-    display: block;
-  }
-  .icon__menu {
-    display: flex;
-  }
-  #check__menu:checked ~ nav > ul {
-    height: 300px;
-    visibility: visible;
-    opacity: 1;
-  }
+.header__superior {
+  padding: 10px;
 }
-html, body {
+
+img {
+  filter: drop-shadow(1px 5px 1px rgb(0, 0, 0));
+  width: 10em;
+}
+
+input {
+  border-radius: 10px;
+  margin-left: 20px;
+}
+
+::placeholder {
+  color: fuchsia;
+  text-shadow: 0px 5px 2px black;
+}
+
+/*barra menu*/
+a {
+  color: gold;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.container__menu {
+  background-image: url(./img/fucsia.jpg);
+  display: flex;
+  justify-content: start;
+  align-content: center;
+  width: 100%;
+  height: 70%;
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.76);
+  padding: 0px 20px;
+}
+
+.comntainer__select {
+  margin-right: 200px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  max-width: 1200px;
+  margin: auto;
   height: 100%;
-  margin: 0;
 }
 
-.page-wrap {
-  min-height: 100%;
-  margin-bottom: -60px;
+nav {
+  height: 100%;
 }
 
-.page-wrap:after {
+nav > ul > li {
+  margin-left: -20px;
+  height: 20%;
+  list-style: none;
+  position: relative;
+}
+
+nav > ul > li > a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: all 300ms ease;
+}
+nav > ul > li > a:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.767);
+}
+
+nav > ul {
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.527);
+  position: fixed;
+  left: 0;
+  top: 158px;
+  width: 100%;
+  height: 0px;
+  transition: all 300ms ease;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+}
+
+nav > ul > li > a {
+  margin-left: 0%;
+  margin-right: 0%;
+  width: 20em;
+  background-color: rgba(0, 0, 0, 0.37);
+  transform: scale(1.1);
+}
+
+nav > ul > li > a:hover {
+  margin-left: 30px;
+  width: 80%;
+  background-color: rgba(0, 0, 0, 0.37);
+  transform: scale(1.1);
+}
+
+nav ul li ul {
+  background-color: rgba(255, 0, 0, 0.555);
+  left: 90px;
+}
+
+nav ul li:hover ul {
+  background-color: rgba(255, 0, 0, 0.767);
+  top: 50px;
+}
+
+nav ul li ul {
+  background-color: rgba(0, 0, 0, 0.692);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.596);
+  position: absolute;
+  margin-top: 90px;
+  left: 100px;
+  padding: 14px 0px;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 10;
+  transition: all 300ms ease;
+  list-style: none;
+}
+nav ul li:hover ul {
+  background-color: rgb(0, 0, 0);
+  height: 250px;
+  visibility: visible;
+  opacity: 1;
+  top: -20px;
+  list-style: none;
+  margin-left: 1vh;
+  width: 30vh;
+}
+nav ul li ul:before {
   content: "";
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid rgba(0, 0, 0, 0.733);
+  position: absolute;
+  top: -12px;
+  left: 20px;
+}
+
+.sub__menu {
+  background-image: url(./img/fucsia.jpg);
+  width: 100px;
+  height: 100px;
+}
+.sub__menu .text__sub {
+  text-shadow: 2px 5px 3px black;
+  text-transform: uppercase;
+  font-size: medium;
+  height: 80px;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0.863);
+}
+
+#selected {
+  transform: scale(1);
+}
+
+#label__check {
   display: block;
 }
 
-.footer, .page-wrap:after {
-  height: 60px;
+.icon__menu {
+  display: flex;
+}
+
+#check__menu:checked ~ nav > ul {
+  height: 300px;
+  visibility: visible;
+  opacity: 1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+.gallery {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 32px;
+}
+.gallery img {
+  position: absolute;
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  box-shadow: 0px 0px 30px black;
 }
 
 .footer {
-  background-image: url(/img/fucsia.jpg);
-  padding: 50px;
   display: flex;
-  justify-content: space-between;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+  justify-content: space-around;
+  scroll-margin-bottom: 10px;
+  background-color: rgb(0, 0, 0);
+  padding: 30px;
 }
-.footer a {
-  color: gold;
-  text-decoration: none;
-  font-size: 1.2rem;
+.footer img {
+  width: 5em;
 }
 
 @media screen and (max-width: 768px) {
   .footer {
-    position: fixed;
-    margin-bottom: -20px;
-    padding: 15px;
-    flex-direction: column;
+    margin-top: 100%;
+    background-color: rgba(0, 0, 0, 0.993);
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
   }
-  .footer a {
-    margin-bottom: 0px;
-    font-size: 1rem;
-    text-align: center;
-  }
-}
-.gallery__calzado {
-  margin-top: 100px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-}
-@media screen and (max-width: 768px) {
-  .gallery__calzado {
-    grid-template-columns: repeat(2, 1fr);
+  .footer img {
+    width: 50px;
   }
 }
-@media screen and (max-width: 576px) {
-  .gallery__calzado {
-    grid-template-columns: 1fr;
-  }
-}
-.gallery__calzado div {
-  overflow: hidden;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.gallery__calzado div .one {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__calzado div:hover .one {
-  transform: scale(1.1);
-}
-.gallery__calzado div .two {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__calzado div:hover .two {
-  transform: scale(1.1);
-}
-.gallery__calzado div .three {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__calzado div:hover .thee {
-  transform: scale(1.1);
-}
-.gallery__calzado div .four {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__calzado div:hover .four {
-  transform: scale(1.1);
-}
-.gallery__calzado div .five {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__calzado div:hover .five {
-  transform: scale(1.1);
-}
-.gallery__calzado div .six {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__calzado div:hover .six {
-  transform: scale(1.1);
-}
-.gallery__calzado div .seven {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__calzado div:hover .seven {
-  transform: scale(1.1);
+.uno {
+  margin-top: 150px;
 }
 
-.gallery__temporada {
+.gallery__index {
   margin-top: 100px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 32px;
 }
-@media screen and (max-width: 768px) {
-  .gallery__temporada {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media screen and (max-width: 576px) {
-  .gallery__temporada {
-    grid-template-columns: 1fr;
-  }
-}
-.gallery__temporada div {
-  overflow: hidden;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.gallery__temporada div .one {
+.gallery__index img {
+  border-radius: 8px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__temporada div:hover .one {
-  transform: scale(1.1);
-}
-.gallery__temporada div .two {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__temporada div:hover .two {
-  transform: scale(1.1);
-}
-.gallery__temporada div .three {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__temporada div:hover .thee {
-  transform: scale(1.1);
-}
-.gallery__temporada div .four {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__temporada div:hover .four {
-  transform: scale(1.1);
-}
-.gallery__temporada div .five {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__temporada div:hover .five {
-  transform: scale(1.1);
-}
-.gallery__temporada div .six {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__temporada div:hover .six {
-  transform: scale(1.1);
-}
-.gallery__temporada div .seven {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__temporada div:hover .seven {
-  transform: scale(1.1);
-}
-.gallery__temporada div .eight {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__temporada div:hover .eight {
-  transform: scale(1.1);
-}
-.gallery__temporada div .nine {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__temporada div:hover .nine {
-  transform: scale(1.1);
-}
-.gallery__temporada div .ten {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__temporada div:hover .ten {
-  transform: scale(1.1);
-}
-.gallery__temporada div .eleven {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__temporada div:hover .eleven {
-  transform: scale(1.1);
-}
-.gallery__temporada div .twelve {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__temporada div:hover .twelve {
-  transform: scale(1.1);
-}
-
-.gallery__hogar {
-  margin-top: 100px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-}
-@media screen and (max-width: 768px) {
-  .gallery__hogar {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media screen and (max-width: 576px) {
-  .gallery__hogar {
-    grid-template-columns: 1fr;
-  }
-}
-.gallery__hogar div {
-  overflow: hidden;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.gallery__hogar div .one {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__hogar div:hover .one {
-  transform: scale(1.1);
-}
-.gallery__hogar div .two {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__hogar div:hover .two {
-  transform: scale(1.1);
-}
-.gallery__hogar div .three {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__hogar div:hover .thee {
-  transform: scale(1.1);
-}
-.gallery__hogar div .four {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__hogar div:hover .four {
-  transform: scale(1.1);
-}
-.gallery__hogar div .five {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__hogar div:hover .five {
-  transform: scale(1.1);
-}
-.gallery__hogar div .six {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__hogar div:hover .six {
-  transform: scale(1.1);
-}
-.gallery__hogar div .seven {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__hogar div:hover .seven {
-  transform: scale(1.1);
-}
-.gallery__hogar div .eight {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__hogar div:hover .eight {
-  transform: scale(1.1);
-}
-.gallery__hogar div .nine {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__hogar div:hover .nine {
-  transform: scale(1.1);
-}
-.gallery__hogar div .ten {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__hogar div:hover .ten {
-  transform: scale(1.1);
-}
-.gallery__hogar div .eleven {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__hogar div:hover .eleven {
-  transform: scale(1.1);
-}
-.gallery__hogar div .twelve {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__hogar div:hover .twelve {
-  transform: scale(1.1);
-}
-
-.gallery__accesorios {
-  margin-top: 100px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-}
-@media screen and (max-width: 768px) {
-  .gallery__accesorios {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media screen and (max-width: 576px) {
-  .gallery__accesorios {
-    grid-template-columns: 1fr;
-  }
-}
-.gallery__accesorios div {
-  overflow: hidden;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.gallery__accesorios div .one {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__accesorios div:hover .one {
-  transform: scale(1.1);
-}
-.gallery__accesorios div .two {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__accesorios div:hover .two {
-  transform: scale(1.1);
-}
-.gallery__accesorios div .three {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__accesorios div:hover .thee {
-  transform: scale(1.1);
-}
-.gallery__accesorios div .four {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__accesorios div:hover .four {
-  transform: scale(1.1);
-}
-.gallery__accesorios div .five {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__accesorios div:hover .five {
-  transform: scale(1.1);
-}
-.gallery__accesorios div .six {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__accesorios div:hover .six {
-  transform: scale(1.1);
-}
-.gallery__accesorios div .seven {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__accesorios div:hover .seven {
-  transform: scale(1.1);
-}
-
-.gallery__masculino {
-  margin-top: 100px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-}
-@media screen and (max-width: 768px) {
-  .gallery__masculino {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media screen and (max-width: 576px) {
-  .gallery__masculino {
-    grid-template-columns: 1fr;
-  }
-}
-.gallery__masculino div {
-  overflow: hidden;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.gallery__masculino div .one {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__masculino div:hover .one {
-  transform: scale(1.1);
-}
-.gallery__masculino div .two {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__masculino div:hover .two {
-  transform: scale(1.1);
-}
-.gallery__masculino div .three {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__masculino div:hover .thee {
-  transform: scale(1.1);
-}
-.gallery__masculino div .four {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__masculino div:hover .four {
-  transform: scale(1.1);
-}
-.gallery__masculino div .five {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__masculino div:hover .five {
-  transform: scale(1.1);
-}
-.gallery__masculino div .six {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__masculino div:hover .six {
-  transform: scale(1.1);
-}
-.gallery__masculino div .seven {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__masculino div:hover .seven {
-  transform: scale(1.1);
-}
-.gallery__masculino div .eight {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__masculino div:hover .eight {
-  transform: scale(1.1);
-}
-.gallery__masculino div .nine {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__masculino div:hover .nine {
-  transform: scale(1.1);
-}
-.gallery__masculino div .ten {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__masculino div:hover .ten {
-  transform: scale(1.1);
-}
-
-.gallery__femenina {
-  margin-top: 100px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-}
-@media screen and (max-width: 768px) {
-  .gallery__femenina {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media screen and (max-width: 576px) {
-  .gallery__femenina {
-    grid-template-columns: 1fr;
-  }
-}
-.gallery__femenina div {
-  overflow: hidden;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.gallery__femenina div .one {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__femenina div:hover p {
-  transform: scale(1.1);
-}
-.gallery__femenina div .two {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__femenina div:hover .two {
-  transform: scale(1.1);
-}
-.gallery__femenina div .three {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__femenina div:hover .thee {
-  transform: scale(1.1);
-}
-.gallery__femenina div .four {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__femenina div:hover .four {
-  transform: scale(1.1);
-}
-.gallery__femenina div .five {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__femenina div:hover .five {
-  transform: scale(1.1);
-}
-.gallery__femenina div .six {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__femenina div:hover .six {
-  transform: scale(1.1);
-}
-.gallery__femenina div .seven {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__femenina div:hover .seven {
-  transform: scale(1.1);
-}
-.gallery__femenina div .eight {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__femenina div:hover .eight {
-  transform: scale(1.1);
-}
-.gallery__femenina div .nine {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__femenina div:hover .nine {
-  transform: scale(1.1);
-}
-.gallery__femenina div .ten {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__femenina div:hover .ten {
-  transform: scale(1.1);
-}
-.gallery__femenina div .eleven {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__femenina div:hover .eleven {
-  transform: scale(1.1);
-}
-.gallery__femenina div .twelve {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-.gallery__femenina div:hover .twelve {
-  transform: scale(1.1);
+  height: auto;
+  filter: drop-shadow(5px 20px 5px rgb(17, 17, 17));
 }
 
 .bd__contact {
@@ -1054,12 +520,6 @@ input::placeholder textarea::placeholder {
   input {
     padding: 15px;
   }
-}
-div img {
-  margin-left: 90px;
-  margin-top: 10%;
-  width: 80%;
-  height: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

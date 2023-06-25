@@ -1,79 +1,302 @@
-.icon__menu{
+
+@media screen and (max-width: 720px){
+
+
+* {
+    margin: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+@mixin back {
+    background-image: url(./img/fucsia.jpg);
+}
+
+
+
+.icon__menu {
     font-size: 26px;
     cursor: pointer;
     width: 26px;
     height: 100%;
     display: flex;
     align-items: center;
+    display: none;
 }
 
-#label__check{
+#label__check {
     width: 26px;
     height: 100%;
     display: none;
 }
 
+
 #check__menu{
     display: none;
 }
 
-@media screen and (max-width: 770px){
-    .search input {
-        display: none;
+.header__superior {
+    padding: 10px;
+}
+
+
+
+img{
+    filter: drop-shadow(1px 5px 1px rgb(0, 0, 0));
+        width: 10em;
+}
+
+
+input {
+    border-radius: 10px;
+    margin-left: 20px;
     }
-    .header__superior {
-        padding:10px
+
+::placeholder {
+    color: fuchsia;
+    text-shadow: 0px 5px 2px black;
+}
+
+
+
+/*barra menu*/
+
+a {
+    color: gold;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.container__menu {
+    @include back;
+    display: flex;
+    justify-content: start;
+    align-content: center;
+    width: 100%;
+    height: 70%;
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.76);
+    padding: 0px 20px;
+}
+
+.comntainer__select {
+    margin-right: 200px;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    max-width: 1200px;
+    margin: auto;
+    height: 100%;
+}
+
+nav {
+    height: 100%;
+}
+
+nav> {
+    ul> {
+        height: 100%;
+        display: flex;
+            li {
+                margin-left: -20px;
+                height: 20%;
+                list-style: none;
+                position: relative;
+        }
     }
-    .logo img {
-        width: 200px;
+}
+
+
+
+nav> {
+    ul> {
+        li> {
+            a {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                padding: 14px;
+                text-transform: uppercase;
+                font-size: 14px;
+                transition: all 300ms ease;
+                &:hover{
+                    transform: scale(1.1);
+                    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.767);
+                }
+            }
+        }
     }
-    nav > ul{
+}
+
+
+
+
+nav> {
+    ul{
         flex-direction: column;
-        background-color: blue;
+        background-color: rgba(0, 0, 0, 0.527);
         position: fixed;
         left: 0;
         top: 158px;
         width: 100%;
-        height: 300px;
+        height: 0px;
         transition: all 300ms ease;
         z-index: 100;
         opacity: 0;
         visibility: hidden;
     }
-    nav > ul{
-flex-direction: column;
-    background-color: brown;
-    position: fixed;
-    left: 0;
-    top: 158px;
+}
+
+
+
+nav> {
+    ul>{
+        li>{
+            a{
+                margin-left: 0%;
+                margin-right: 0%;
+                width: 20em;
+                background-color: rgba(0, 0, 0, 0.37);
+                transform: scale(1.1);
+        }   }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+nav> {
+    ul>{
+        li>{
+            a:hover{
+                margin-left: 30px;
+                width: 80%;
+                background-color: rgba(0, 0, 0, 0.37);
+                transform: scale(1.1);
+        }   }
+    }
+}
+
+nav{
+    ul{
+        li{
+            ul{
+                background-color: rgba(255, 0, 0, 0.555);
+                left: 90px;
+            }
+        }
+    }
+}
+
+nav {
+    ul {
+        li {
+            &:hover {
+                ul {
+                    background-color: rgba(255, 0, 0, 0.767);
+                    top: 50px;
+                }
+            }
+        }
+    }
+}
+
+
+//________SUB__MENU________//
+
+
+nav {
+    ul {
+        li {
+            ul {
+                background-color: rgba(0, 0, 0, 0.692);
+                width: 100%;
+                display: flex;
+                flex-direction: column;;
+                box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.596);
+                position: absolute;
+                margin-top: 90px;
+                left: 100px;
+                padding: 14px 0px;
+                visibility: hidden;
+                opacity: 0;
+                z-index: 10;
+                transition: all 300ms ease;
+                list-style: none;
+                }
+                &:hover{
+                    ul {
+                        background-color: rgb(0, 0, 0);
+                        height: 250px;
+                        visibility: visible;
+                        opacity: 1;
+                        top: -20px;
+                        list-style: none;
+                        margin-left: 1vh;
+                        width: 30vh;
+                    }
+                }
+            ul:before {
+                content:"";
+                width: 0;
+                height: 0;
+                border-left: 12px solid transparent;
+                border-right: 12px solid transparent;
+                border-bottom: 12px solid rgba(0, 0, 0, 0.733);
+                position: absolute;
+                top: -12px;
+                left: 20px;
+            }
+        }
+    }
+}
+
+.sub__menu {
+    @include back;
     width: 100px;
+    height: 100px;
+        .text__sub {
+            text-shadow: 2px 5px 3px black;
+            text-transform: uppercase;
+            font-size: medium;
+            height: 80px;
+        }
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.863);
+}
+
+
+
+
+#selected {
+    transform: scale(1);
+}
+
+#label__check {
+    display: block;
+}
+
+.icon__menu {
+    display: flex;
+}
+
+#check__menu:checked ~ nav > ul {
     height: 300px;
-    transition: all 300ms ease;
-    z-index: 100;
-    opacity: 0;
-    visibility: hidden;
-    }
-    nav > ul > li > a:hover{
-        transform: scale(1);
-    }
-    nav ul li  ul {
-        left: 90px;
-    }
-    nav > ul > li:hover  ul {
-        top: 50px;
-    }
-    #selected {
-        transform: scale(1);
-    }
-    #label__check{
-        display: block;
-    }
-    .icon__menu{
-        display: flex;
-    }
-    #check__menu:checked ~ nav > ul{
-        height: 300px;
-        visibility: visible;
-        opacity: 1;
-    }
+    visibility: visible;
+    opacity: 1;
+}
 }
