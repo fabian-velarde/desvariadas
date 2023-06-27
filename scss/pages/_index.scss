@@ -1,1 +1,21 @@
 
+.uno{
+    align-content: center;
+    margin-top: 150px;
+    margin-left: 500px;
+    width: 30em;
+    z-index: 10;
+}
+
+@media screen and (max-width: 768px){
+.uno{
+    align-content: center;
+    margin-top: 150px;
+    margin-left: 5px;
+    width: 20em;
+    z-index: 10;
+}
+
+}
+
+
